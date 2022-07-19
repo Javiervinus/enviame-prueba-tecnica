@@ -1,5 +1,5 @@
 .card-heroe {
-    min-height: 300px !important;
+    min-height: 220px !important;
 }
 
 .center-content {
@@ -9,4 +9,36 @@
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+
+
+@media screen and (max-width:670px) {
+    .card-img {
+        height: auto;
+    }
+
+    .top-left-content {
+        cursor: pointer;
+        position: absolute;
+        left: 97%;
+        bottom: 0%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (min-width:670px) {
+    .card-img {
+        height: 150px !important;
+    }
+
+    .top-left-content {
+        cursor: pointer;
+        position: absolute;
+        left: 97%;
+        top: 4%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
 }

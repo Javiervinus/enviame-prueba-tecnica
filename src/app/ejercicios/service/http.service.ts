@@ -15,8 +15,18 @@ export class HttpService {
     params = params.append("hash", environment.hashKey)
 
     params = params.append("offset", offset)
-    console.log(params)
 
+    return new Promise((resolve) => {
+      this.http
+        .get(`${environment.apiUrl}/characters`, { params }).subscribe((response: any) => {
+          resolve(response)
+        })
+
+    });
+  }
+  async getHeroesStartsBy(name: string) {
+    let params = new HttpParams()
+    params = params.append("nameStartsWith", name)
     return new Promise((resolve) => {
       this.http
         .get(`${environment.apiUrl}/characters`, { params }).subscribe((response: any) => {
@@ -27,15 +37,10 @@ export class HttpService {
   }
   async getHeroesByName(name: string) {
     let params = new HttpParams()
-    params = params.append("ts", 1)
-    params = params.append("apikey", environment.apiKey)
-    params = params.append("hash", environment.hashKey)
-
-    params = params.append("nameStartsWith", name)
-
+    params = params.append("name", name)
     return new Promise((resolve) => {
       this.http
-        .get(`${environment.apiUrl}/characters`).subscribe((response: any) => {
+        .get(`${environment.apiUrl}/characters`, { params }).subscribe((response: any) => {
           resolve(response)
         })
 

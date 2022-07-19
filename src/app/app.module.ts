@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { httpInterceptorProviders } from './interceptors';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

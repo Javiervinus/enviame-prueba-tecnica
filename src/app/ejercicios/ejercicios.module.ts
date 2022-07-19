@@ -8,6 +8,7 @@ import { Ejercicio2Component } from './ejercicio2/ejercicio2.component';
 import { Ejercicio3Component } from './ejercicio3/ejercicio3.component';
 import { EjerciciosPanelComponent } from './ejercicios-panel/ejercicios-panel.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { HeroModalComponent } from './hero-modal/hero-modal.component';
 
 
 
@@ -16,7 +17,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     Ejercicio1Component,
     Ejercicio2Component,
     Ejercicio3Component,
-    EjerciciosPanelComponent
+    EjerciciosPanelComponent,
+    HeroModalComponent
   ],
   imports: [
     CommonModule,
