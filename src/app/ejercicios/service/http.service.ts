@@ -10,12 +10,7 @@ export class HttpService {
   }
   async getHeroes(offset: number) {
     let params = new HttpParams()
-    params = params.append("ts", 1)
-    params = params.append("apikey", environment.apiKey)
-    params = params.append("hash", environment.hashKey)
-
     params = params.append("offset", offset)
-
     return new Promise((resolve) => {
       this.http
         .get(`${environment.apiUrl}/characters`, { params }).subscribe((response: any) => {
