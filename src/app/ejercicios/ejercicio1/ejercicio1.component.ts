@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { isPrime } from 'mathjs';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-ejercicio1',
+  templateUrl: './ejercicio1.component.html',
+  styleUrls: ['./ejercicio1.component.css']
 })
-export class AppComponent {
+export class Ejercicio1Component implements OnInit {
+
   initial: string = "";
   final: string = "";
   result: string = "";
-  public isMenuCollapsed = true;
-
   constructor() {
 
   }
@@ -32,4 +32,8 @@ export class AppComponent {
     }
     this.result = array.toString()
   }
+
+  ngOnInit(): void {
+  }
+
 }

@@ -1,0 +1,45 @@
+<div class="card shadow pb-4 mt-4 ">
+
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Marvel Heroes</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <input type="text" class="form-control" placeholder="Buscar héroe por nombre">
+            </div>
+        </div>
+    </div>
+</div>
+<div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
+    <div class="row mt-4 mb-4">
+        <div class="col-lg-4">
+            <div class="card card-heroe shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="center-content col-12 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 mb-3" *ngFor="let hero of heroes">
+            <div class="card card-heroe shadow">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

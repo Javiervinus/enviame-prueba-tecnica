@@ -1,0 +1,47 @@
+<div class="card mt-3 shadow">
+    <div class="card-body">
+        <div class="card-title">
+            <h5 class="text-muted">Ejercicio 1</h5>
+
+            <span>Ingrese rango de números para calcular sus primos entre ellos</span>
+        </div>
+        <form (ngSubmit)="calculate()" #form="ngForm">
+            <div class="row mt-4">
+                <div class="col-xl-5 col-md-4 col-12">
+                    <div class="form-group">
+                        <input #uinitial="ngModel" type="text" name="initial" pattern="[0-9]+" [(ngModel)]="initial"
+                            class="form-control" placeholder="Ingresar numero inicial">
+                    </div>
+                </div>
+                <div class="col-xl-5  col-md-4  col-12 mt-md-0 mt-2">
+                    <div class="form-group">
+                        <input #ufinal="ngModel" name="final" pattern="[0-9]+" [(ngModel)]="final" type="text"
+                            class="form-control" placeholder="Ingresar numero final">
+                    </div>
+
+                </div>
+                <div class="col-xl-2  col-md-4  col-12 mt-md-0 mt-2">
+                    <div class="d-grid gap-lg-1">
+                        <button class="btn btn-primary" type="submit"
+                            [disabled]="!form.valid ||initial=='' || final==''">Calcular</button>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-12 text-center">
+                        <div *ngIf="uinitial.errors?.['pattern'] || ufinal.errors?.['pattern']">
+                            <span class="text-danger">
+                                Los números solo pueden ser enteros positivos
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+        <div class="row mt-3">
+            <div class="col-12">
+                <input type="text" class="form-control" [(ngModel)]="result" readonly placeholder="Resultado">
+            </div>
+        </div>
+    </div>
+</div>
