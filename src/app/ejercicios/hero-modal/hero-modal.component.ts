@@ -29,6 +29,8 @@ export class HeroModalComponent implements OnInit {
   }
   async save() {
     const isNewName = await this.isNewName()
+
+
     if (isNewName) {
       const now = new Date()
       this.hero.modified = now.toString()
@@ -36,6 +38,7 @@ export class HeroModalComponent implements OnInit {
     }
   }
   async isNewName(): Promise<boolean> {
+    if (this.hero.id) return true
     const response = await this.httpService.getHeroesByName(this.hero.name!) as any
     if (response.data.results.length > 0) {
       alert("Ya existe este Héroe")
